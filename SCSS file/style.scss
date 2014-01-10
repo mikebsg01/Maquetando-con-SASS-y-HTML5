@@ -1,0 +1,374 @@
+/*
+-
+- 
+- Titulo de la aplicación: Maquetando con SASS y HTML5
+-
+- Autor: Michael Serrato.
+-
+- Lenguajes utilizados: SASS (Metalenguaje y Pre-procesador 
+- de CSS) y HTML5 (Lenguaje de Marcado de Hipertexto).
+-
+- Propósito: Esta aplicación es una guia completa para
+- aprender a maquetar con el pre-procesador SASS,
+- logrando así, crear una aplicación web haciendo uso
+- del nuevo lenguaje de hipertexto HTML5 y aplicando 
+- conocimientos de Responsive Design (Diseño Adaptable).
+-
+- Comunidad: html5facil.com
+- 
+- Aplicación creada por: Michael Serrato.
+- 
+- Correo Electrónico: mikebsg01@gmail.com
+-
+- 
+-
+*/
+
+// ARCHIVO: style.scss
+
+/* Archivo style.css */
+
+// Inicializamos Variables:
+
+$page_width: 100%;
+$page_background: #f1f1f1;
+$font: arial, sans-serif;
+$font-size: 16px;
+
+// Colores Primarios:
+
+$black: #000;
+$gray: #c9c9c9;
+$white: #f9f9f9;
+$gray_light: #ccc;
+$gray_dark: #1d1d1d;
+$gray_alternative: #333;
+$main-color: rgb(0,160,250);
+
+// Finalizamos con la declaración de variables.
+
+// Creamos mixins para las propiedades de CSS3
+
+@mixin linear-gradient($gradient...){
+	background-image: linear-gradient($gradient); /* W3C */
+	background-image: -webkit-linear-gradient($gradient); /* Safari y Google Chrome */
+	background-image: -moz-linear-gradient($gradient); /* Mozilla Firefox */
+	background-image: -o-linear-gradient($gradient); /* Opera */
+}
+
+@mixin box-shadow($shadow...){
+	box-shadow: $shadow; /* W3C */
+	-webkit-box-shadow: $shadow; /* Safari y Google Chrome */
+	-moz-box-shadow: $shadow; /* Mozilla Firefox */
+	-o-box-shadow: $shadow; /* Opera */
+}
+
+@mixin text-shadow($shadow...){
+	text-shadow: $shadow; /* W3C */
+	-webkit-text-shadow: $shadow; /* Safari y Google Chrome */
+	-moz-text-shadow: $shadow; /* Mozilla Firefox */
+	-o-text-shadow: $shadow; /* Opera */
+}
+
+@mixin border-radius($radius...){
+	border-radius: $radius; /* W3C */
+	-webkit-border-radius: $radius; /* Safari y Google Chrome */
+	-moz-border-radius: $radius; /* Mozilla Firefox */
+	-o-border-radius: $radius; /* Opera */
+}
+
+@mixin transition($transition...){
+	transition: $transition; /* W3C */
+	-webkit-transition: $transition; /* Safari y Google Chrome */
+	-moz-transition: $transition; /* Mozilla Firefox */
+	-o-transition: $transition; /* Opera */
+}
+
+// Finalizamos con la creación de mixins
+
+// Comenzamos con los estilos:
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: $page_background; 
+	font-family: $font;
+	font-size: $font-size;
+}
+
+a {
+	color: $main-color;
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: underline;
+	}
+
+}
+
+.content-wrapper {
+	width: $page_width;
+	position: relative;
+}
+
+
+section, header, footer { 
+	width: $page_width;
+	position: relative;
+	display: block;
+}
+
+
+#navbar {
+	margin-left: 0;
+	display: block;
+	width: 100%;
+	position: relative;
+
+	ul {
+
+		@include linear-gradient(top, $gray_alternative, $gray_dark, darken($gray_dark, 5%));
+		background-color: $black;
+		color: $white;
+
+		li {
+			font-style: italic;
+			display: inline-block;
+			*float: left; 	 /* Unicamente para navegadores antiguos de IE */
+			*display: block; /* ya que permite buscar un diseño adaptable. */
+			padding: .75em;
+			
+			&:hover{
+				@include linear-gradient(top, darken($gray_dark, 6%), darken($gray_dark, 4%), darken($gray_dark, 4%));
+				@include transition(text-shadow .4s);
+				@include text-shadow(0 0 13px rgba(255,255,255,.8));
+				cursor: pointer;
+				@include border-radius(1.5em 0 1.5em 0);
+			}
+
+		}
+
+		a{
+			text-decoration: none;
+			font-size: 1em;
+			color: $gray_light;
+			font-weight: bold;
+			
+		}
+
+	}
+
+}
+
+#welcome {
+
+	width: $page_width;
+	display: block;
+	margin: auto;
+	height: 256px;
+	background-image: url("images/html5facil_logo.png");
+	background-color: $gray_dark;
+	background-size: 80% 160%;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}
+
+.content {
+	width: 62%;
+	min-height: 256px;
+	vertical-align: top;
+	float: left;
+	margin-left: 0;
+	clear: both;
+	display: block;
+
+	article {
+
+		width: 96%;
+		padding: 1em 0;
+		margin: auto;
+		display: block;
+		
+		hgroup h1, h2, h3 {
+			text-align: center;
+			margin: .5em 0;
+			padding: .25em 0;
+			background-color: $gray_dark;
+			@include border-radius(1.5em 0 1.5em 0);
+			@include linear-gradient(top, $gray_alternative, $gray_dark, darken($gray_dark, 5%));
+			color: $main-color;
+			font-style: italic;
+			font-size: 1.5em;
+		}
+
+		.date {
+			display: block;
+			margin-right: auto;
+			width: 52%;
+			padding: 2px 8px;
+			text-align: center;
+			background-color: $gray_dark;
+			@include border-radius(1.5em 0 1.5em 0);
+			@include linear-gradient(top, $gray_alternative, $gray_dark, darken($gray_dark, 5%));
+			color: $gray_light;
+			font-size: .85em;
+			font-style: italic;
+			
+		}
+
+		img {
+			width: 144px;
+			max-width: 144px;
+			height: 120px;
+			max-height: 120px;
+			display: block;
+			border: 1px solid $gray_light;
+			@include border-radius(2px 2px);
+			padding: 5px 5px;
+			float: right;
+		}
+
+		p {
+
+			margin-top: 26px;
+			margin-bottom: 10px;
+			word-wrap: break-word;
+
+			
+		}
+
+		
+
+	}
+
+
+	.comments-form {
+
+		width: 92%;
+		display: block;
+		margin: auto;
+		min-height: 120px;
+		border: 1px solid $gray_light;
+		@include border-radius(2px 2px);
+		padding: 1em 1em;
+
+		 
+		input[type="text"],
+		input[type="email"]{
+			width: 66%;
+			height: 1.75em;
+			display: inline-block;
+			*float: left;
+			*display: block;
+			@include border-radius(1.5em 0 1.5em 0);
+			border: 1px solid $gray_light;
+		}
+
+		textarea{
+			width: 96%;
+			height: 122px;
+			@include border-radius(1.5em 0 1.5em 0);
+			border: 1px solid $gray_light;
+		}
+
+		.input {
+			margin-bottom: 1.25em;
+		}
+
+		input[type="submit"]{
+			@include border-radius(1.5em 0 1.5em 0);
+			border: 1px solid $gray_light;
+			padding: 4px 22px;
+			font-size: 1em;
+			color: $main-color;
+			background-color: inherit;
+
+			&:hover{
+				cursor: pointer;
+				@include transition(all .8s);
+				background-color: $white;
+			}
+
+		}
+
+
+	}
+
+
+}
+
+aside {
+
+	min-height: 256px;
+	vertical-align: top;
+	float: left;
+	clear: none;
+	margin-left: 2%;
+	display: block;
+	width: 35%;
+	border-right: none;
+
+	.item-aside {
+
+		padding: 1em 0;
+		width: 96%;
+		margin: auto;
+		display: block;
+
+		hgroup h1, h2, h3 {
+			
+			text-align: center;
+			margin: .5em 0;
+			padding: .25em 0;
+			background-color: $gray_dark;
+			@include border-radius(1.5em 0 1.5em 0);
+			@include linear-gradient(top, $gray_alternative, $gray_dark, darken($gray_dark, 5%));
+			color: $main-color;
+			font-style: italic;
+			font-size: 1.5em;
+
+		}
+
+	}
+
+}
+
+.clear-50px {
+	display: block;
+	height: 50px;
+}
+
+
+
+footer {
+
+	min-height: 92px;
+	padding: 1em 1em;
+	vertical-align: bottom;
+	display: block;
+	width: 100%;
+	position: relative;
+	clear: both;
+	background-color: $gray_dark;
+	color: $gray_light;
+	margin-bottom: 0;
+	bottom: 0;
+
+	.copyright{
+		width: 96%;
+		margin-top: 22px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 22px;
+		text-align: center;
+	}
+
+}
+
+
+

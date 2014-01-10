@@ -1,0 +1,373 @@
+@charset "UTF-8";
+/*
+-
+- 
+- Titulo de la aplicación: Maquetando con SASS y HTML5
+-
+- Autor: Michael Serrato.
+-
+- Lenguajes utilizados: SASS (Metalenguaje y Pre-procesador 
+- de CSS) y HTML5 (Lenguaje de Marcado de Hipertexto).
+-
+- Propósito: Esta aplicación es una guia completa para
+- aprender a maquetar con el pre-procesador SASS,
+- logrando así, crear una aplicación web haciendo uso
+- del nuevo lenguaje de hipertexto HTML5 y aplicando 
+- conocimientos de Responsive Design (Diseño Adaptable).
+-
+- Comunidad: html5facil.com
+- 
+- Aplicación creada por: Michael Serrato.
+- 
+- Correo Electrónico: mikebsg01@gmail.com
+-
+- 
+-
+*/
+/* Archivo style.css */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-family: arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: #00a0fa;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.content-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+section, header, footer {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+#navbar {
+  margin-left: 0;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+#navbar ul {
+  background-image: linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* W3C */
+  background-image: -webkit-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Safari y Google Chrome */
+  background-image: -moz-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Mozilla Firefox */
+  background-image: -o-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Opera */
+  background-color: black;
+  color: #f9f9f9;
+}
+#navbar ul li {
+  font-style: italic;
+  display: inline-block;
+  *float: left;
+  /* Unicamente para navegadores antiguos de IE */
+  *display: block;
+  /* ya que permite buscar un diseño adaptable. */
+  padding: .75em;
+}
+#navbar ul li:hover {
+  background-image: linear-gradient(top, #0e0e0e, #131313, #131313);
+  /* W3C */
+  background-image: -webkit-linear-gradient(top, #0e0e0e, #131313, #131313);
+  /* Safari y Google Chrome */
+  background-image: -moz-linear-gradient(top, #0e0e0e, #131313, #131313);
+  /* Mozilla Firefox */
+  background-image: -o-linear-gradient(top, #0e0e0e, #131313, #131313);
+  /* Opera */
+  transition: text-shadow 0.4s;
+  /* W3C */
+  -webkit-transition: text-shadow 0.4s;
+  /* Safari y Google Chrome */
+  -moz-transition: text-shadow 0.4s;
+  /* Mozilla Firefox */
+  -o-transition: text-shadow 0.4s;
+  /* Opera */
+  text-shadow: 0 0 13px rgba(255, 255, 255, 0.8);
+  /* W3C */
+  -webkit-text-shadow: 0 0 13px rgba(255, 255, 255, 0.8);
+  /* Safari y Google Chrome */
+  -moz-text-shadow: 0 0 13px rgba(255, 255, 255, 0.8);
+  /* Mozilla Firefox */
+  -o-text-shadow: 0 0 13px rgba(255, 255, 255, 0.8);
+  /* Opera */
+  cursor: pointer;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+}
+#navbar ul a {
+  text-decoration: none;
+  font-size: 1em;
+  color: #cccccc;
+  font-weight: bold;
+}
+
+#welcome {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: 256px;
+  background-image: url("../../assets/img/html5facil_logo.png");
+  background-color: #1d1d1d;
+  background-size: 80% 160%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  width: 62%;
+  min-height: 256px;
+  vertical-align: top;
+  float: left;
+  margin-left: 0;
+  clear: both;
+  display: block;
+}
+.content article {
+  width: 96%;
+  padding: 1em 0;
+  margin: auto;
+  display: block;
+}
+.content article hgroup h1, .content article h2, .content article h3 {
+  text-align: center;
+  margin: .5em 0;
+  padding: .25em 0;
+  background-color: #1d1d1d;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  background-image: linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* W3C */
+  background-image: -webkit-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Safari y Google Chrome */
+  background-image: -moz-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Mozilla Firefox */
+  background-image: -o-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Opera */
+  color: #00a0fa;
+  font-style: italic;
+  font-size: 1.5em;
+}
+.content article .date {
+  display: block;
+  margin-right: auto;
+  width: 52%;
+  padding: 2px 8px;
+  text-align: center;
+  background-color: #1d1d1d;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  background-image: linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* W3C */
+  background-image: -webkit-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Safari y Google Chrome */
+  background-image: -moz-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Mozilla Firefox */
+  background-image: -o-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Opera */
+  color: #cccccc;
+  font-size: .85em;
+  font-style: italic;
+}
+.content article img {
+  width: 144px;
+  max-width: 144px;
+  height: 120px;
+  max-height: 120px;
+  display: block;
+  border: 1px solid #cccccc;
+  border-radius: 2px 2px;
+  /* W3C */
+  -webkit-border-radius: 2px 2px;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 2px 2px;
+  /* Mozilla Firefox */
+  -o-border-radius: 2px 2px;
+  /* Opera */
+  padding: 5px 5px;
+  float: right;
+}
+.content article p {
+  margin-top: 26px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+.content .comments-form {
+  width: 92%;
+  display: block;
+  margin: auto;
+  min-height: 120px;
+  border: 1px solid #cccccc;
+  border-radius: 2px 2px;
+  /* W3C */
+  -webkit-border-radius: 2px 2px;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 2px 2px;
+  /* Mozilla Firefox */
+  -o-border-radius: 2px 2px;
+  /* Opera */
+  padding: 1em 1em;
+}
+.content .comments-form input[type="text"],
+.content .comments-form input[type="email"] {
+  width: 66%;
+  height: 1.75em;
+  display: inline-block;
+  *float: left;
+  *display: block;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  border: 1px solid #cccccc;
+}
+.content .comments-form textarea {
+  width: 96%;
+  height: 122px;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  border: 1px solid #cccccc;
+}
+.content .comments-form .input {
+  margin-bottom: 1.25em;
+}
+.content .comments-form input[type="submit"] {
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  border: 1px solid #cccccc;
+  padding: 4px 22px;
+  font-size: 1em;
+  color: #00a0fa;
+  background-color: inherit;
+}
+.content .comments-form input[type="submit"]:hover {
+  cursor: pointer;
+  transition: all 0.8s;
+  /* W3C */
+  -webkit-transition: all 0.8s;
+  /* Safari y Google Chrome */
+  -moz-transition: all 0.8s;
+  /* Mozilla Firefox */
+  -o-transition: all 0.8s;
+  /* Opera */
+  background-color: #f9f9f9;
+}
+
+aside {
+  min-height: 256px;
+  vertical-align: top;
+  float: left;
+  clear: none;
+  margin-left: 2%;
+  display: block;
+  width: 35%;
+  border-right: none;
+}
+aside .item-aside {
+  padding: 1em 0;
+  width: 96%;
+  margin: auto;
+  display: block;
+}
+aside .item-aside hgroup h1, aside .item-aside h2, aside .item-aside h3 {
+  text-align: center;
+  margin: .5em 0;
+  padding: .25em 0;
+  background-color: #1d1d1d;
+  border-radius: 1.5em 0 1.5em 0;
+  /* W3C */
+  -webkit-border-radius: 1.5em 0 1.5em 0;
+  /* Safari y Google Chrome */
+  -moz-border-radius: 1.5em 0 1.5em 0;
+  /* Mozilla Firefox */
+  -o-border-radius: 1.5em 0 1.5em 0;
+  /* Opera */
+  background-image: linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* W3C */
+  background-image: -webkit-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Safari y Google Chrome */
+  background-image: -moz-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Mozilla Firefox */
+  background-image: -o-linear-gradient(top, #333333, #1d1d1d, #101010);
+  /* Opera */
+  color: #00a0fa;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.clear-50px {
+  display: block;
+  height: 50px;
+}
+
+footer {
+  min-height: 92px;
+  padding: 1em 1em;
+  vertical-align: bottom;
+  display: block;
+  width: 100%;
+  position: relative;
+  clear: both;
+  background-color: #1d1d1d;
+  color: #cccccc;
+  margin-bottom: 0;
+  bottom: 0;
+}
+footer .copyright {
+  width: 96%;
+  margin-top: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 22px;
+  text-align: center;
+}
