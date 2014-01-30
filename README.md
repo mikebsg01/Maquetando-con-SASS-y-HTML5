@@ -1,7 +1,6 @@
 Maquetando con SASS y HTML5
 ===========================
 
-# Autor: Michael Serrato.
 
 # Descripción: 
 Este Proyecto representa todo una Guia completa de maquetación con SASS y HTML5 
@@ -16,7 +15,8 @@ aplicaciones web y moviles.
 * Conocimientos sobre Diseño de aplicaciones (en especial Responsive Design) - BÁSICOS 
 * Conocimientos del pre-procesador SASS – BÁSICOS O CASI NULOS ( No se requiren ).
 	
-===========================
+
+# Autor: Michael Serrato.
 
  Correo Electrónico: mikebsg01@gmail.com - Twitter: @mikebsg01
 
